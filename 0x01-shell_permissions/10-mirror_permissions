@@ -1,2 +1,3 @@
 #!/bin/bash
-chmod mode:0:11
+stat -c "%a" olleh
+chmod mode hello
