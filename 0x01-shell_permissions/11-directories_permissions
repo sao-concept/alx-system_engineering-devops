@@ -1,2 +1,2 @@
 #!/bin/bash
-find . ! -type d -exec chmod u+rwx,g+rwx,o+rwx {} +
+chmod a+x $(ls -d */)
