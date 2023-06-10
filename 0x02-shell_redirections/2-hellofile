@@ -1,2 +1,2 @@
 #!/bin/bash
-echo /etc/passwd | password.txt
+cat /etc/passwd
