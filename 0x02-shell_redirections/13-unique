@@ -1,2 +1,2 @@
 #!/bin/bash
-cat >> list | ls -u
+cat >> list -u
