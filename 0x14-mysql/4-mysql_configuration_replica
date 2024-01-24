@@ -41,4 +41,8 @@ server-id = 2
 symbolic-links=0
 
 binlog_do_db    = tyrell_corp
-relay-log       = /var/log/mysql/mysql-relay-bin.log
+# relay-log       = /var/log/mysql/mysql-relay-bin.log
+
+relay_log = mysql-relay-bin
+relay_log_index = mysql-relay-bin.index
+
