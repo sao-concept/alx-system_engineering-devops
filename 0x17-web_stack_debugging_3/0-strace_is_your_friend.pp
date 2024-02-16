@@ -1,21 +1,10 @@
-#!/usr/bin/env bash
-# This script configures an Ubuntu server with the below requirements.
-# localhost resolves to 127.0.0.2
-# facebook.com resolves to 8.8.8.8
+# A puppet manuscript to replace a line in a file on a server
 
-# cp /etc/hosts ~/hosts.new
-# sed -i 's/127.0.0.1\tlocalhost/127.0.0.2 localhost\n8.8.8.8 facebook.com/' ~/hosts.new
-# cp -f ~/hosts.new /etc/hosts
+$file_to_edit = '/var/www/html/wp-settings.php'
 
-# OR
-# cp /etc/hosts ~/hosts.new
-# sed -i 's/.*localhost/127.0.0.2 localhost/g' ~/hosts.new
-# sed -i 's/.*facebook.com//g' ~/hosts.new
-# sed -i '1 a 8.8.8.8 facebook.com' ~/hosts.new
-# cp -f ~/hosts.new /etc/hosts
+#replace line containing "phpp" with "php"
 
-# OR
-cp /etc/hosts new_hosts
-sed -i s/^127.*/"127.0.0.2 localhost"/ new_hosts
-echo "8.8.8.8 facebook.com" >> new_hosts
-cp new_hosts /etc/hosts
+exec { 'replace_line':
+  command => "sed -i 's/phpp/php/g' ${file_to_edit}",
+  path    => ['/bin','/usr/bin']
+}
