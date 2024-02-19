@@ -44,6 +44,6 @@ server {
 
         # Specify the base path for the proxied requests
         proxy_set_header X-Script-Name /airbnb-dynamic;
-        proxy_redirect off;
+        proxy_redirect on;
     }
 }
